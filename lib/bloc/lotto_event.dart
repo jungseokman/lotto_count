@@ -12,10 +12,14 @@ class GetRecentRound extends LottoEvent {}
 class GetLottoNumber extends LottoEvent {
   const GetLottoNumber({
     required this.recentRound,
+    required this.count,
+    required this.type,
   });
 
   final String recentRound;
+  final String type;
+  final int count;
 
   @override
-  List<Object> get props => [recentRound];
+  List<Object> get props => [recentRound, type, count];
 }
