@@ -31,9 +31,6 @@ class LottoApiService {
     try {
       final response = await _dio.get(
         '$cors/https://www.dhlottery.co.kr/gameResult.do?method=byWin',
-        options: Options(
-          headers: {'x-cors-api-key': 'temp_fc67a83740ef24e8c66916051c9ac23e'},
-        ),
       );
 
       final html = response.data;
@@ -97,6 +94,7 @@ class LottoApiService {
         final response = await _dio.get(
           '$cors/https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=$no',
         );
+
         if (response.data != null) {
           Map<String, dynamic> jsonData = json.decode(response.data);
 
